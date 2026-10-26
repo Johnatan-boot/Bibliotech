@@ -7,3 +7,13 @@ CREATE TABLE item (
   edicao TEXT,
   disponivel INTEGER NOT NULL DEFAULT 1
 );
+
+
+
+
+CREATE TABLE usuario (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nome TEXT NOT NULL,
+  tipo TEXT NOT NULL CHECK (tipo IN ('aluno', 'professor')),
+  limite_itens INTEGER NOT NULL CHECK (limite_itens > 0)
+);
